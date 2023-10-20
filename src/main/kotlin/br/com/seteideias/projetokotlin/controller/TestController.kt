@@ -12,25 +12,23 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("customer")
+@RequestMapping("/customer")
 class TestController {
 
     var customers = mutableListOf<Pessoa>()
 
     @GetMapping
-    fun getPessoasList(@RequestParam name : String?) : List<Pessoa> {
+    fun getPessoasList(@RequestParam name: String?): List<Pessoa> {
         name?.let {
-            return customers.filter { it.nome.contains(name,true) }
+            return customers.filter { it.nome.contains(name, true) }
         }
         return customers
     }
 
     @PostMapping
-    fun addCustomer(@RequestBody personCustomer : Pessoa) : ResponseEntity<Pessoa>{
+    fun addCustomer(@RequestBody personCustomer: Pessoa): ResponseEntity<Pessoa> {
         customers.add(personCustomer)
         return ResponseEntity.status(HttpStatus.CREATED).body(personCustomer)
     }
-
-
 
 }
