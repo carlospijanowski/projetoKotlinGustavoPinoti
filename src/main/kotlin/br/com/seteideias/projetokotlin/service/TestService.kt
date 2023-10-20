@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service
 class TestService {
 }
 
-//fun main() {
-//    val pessoa = Pessoa(idade = 45, nome = "Carlos")
-//    println(pessoa.nome)
-//    println(pessoa.idade)
-//}
+fun main() {
+    val pessoa = Pessoa(idade = 45, nome = "Carlos")
+    println(pessoa.nome)
+    println(pessoa.idade)
+}
